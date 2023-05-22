@@ -12,8 +12,8 @@ if (month == '03' and 21 <= int(day)) or (month == '04' and int(day) <=19):
     key_pressed2 = "This is option 2"
 elif (month == '04' and 20 <= int(day)) or (month == '05' and int(day) <=20):
     interval_message = "You're a Taurus"
-    key_pressed1 = "This is option 1"
-    key_pressed2 = "This is option 2"
+    key_pressed1 = "Chef, Artist, Interior Designer, Architect, Construction, Politician, Fashion Designer, Botanist, Biologist. "
+    key_pressed2 = "You are someone people can count on, and that is super important. At times when people don't follow through on things, you know and understand how crucial it is to keep your word. Your weaknesses of being very obstinate and overprotective can fall heavy on you. You can also be stubborn to the point of not compromising which is a major rule-breaker for success."
 elif (month == '05' and 21 <= int(day)) or (month == '06' and int(day) <=21):
     interval_message = "You're a Gemini"
     key_pressed1 = "This is option 1"
@@ -57,10 +57,8 @@ elif (month == '02' and 19 <= int(day)) or (month == '03' and int(day) <=20):
 
 if interval_message:
     print(interval_message)
-    print(key_pressed1)
-    print(key_pressed2)
 
-    key = input ("Press '1' for option 1, or '2' for option 2: ")
+    key = input ("Press '1' for Best career match, or '2' for How to succeed: ")
 
     if key == '1':
         print(key_pressed1)
