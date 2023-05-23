@@ -28,62 +28,62 @@ class StarSign(enum.Enum):
 
 STAR_SIGN_CAREER_MATCH = {
     StarSign.ARIES: {
-        "career": "text here",
+        "career": "Best Job: Entrepreneur or journalist",
         "celebrities": "text here",
         "secret": "text here"
     },
 StarSign.TAURUS: {
-        "career": "text here",
+        "career": "Best Job: Stylist or designer",
         "celebrities": "text here",
-        "secret": "text here"
+        "secret": "Willpower. Think of its symbol, the bull (or even a bulldozer), and you've got an idea of how Taurus gets things done. They push, roll over, and dominate whatever challenges they're facing until those challenges are history. They're also a model for perseverance—when a Bull decides to do something, they get it done."
     },
 StarSign.GEMINI: {
-        "career": "text here",
+        "career": "Best Job: Teacher or public relations",
         "celebrities": "text here",
         "secret": "text here"
     },
 StarSign.CANCER: {
-        "career": "text here",
+        "career": "Best Job: CEO or nutritionist",
         "celebrities": "text here",
         "secret": "text here"
     },
 StarSign.LEO: {
-        "career": "text here",
+        "career": "Best Job: Salesperson, hairstylist or actor",
         "celebrities": "text here",
         "secret": "text here"
     },
 StarSign.VIRGO: {
-        "career": "text here",
+        "career": "Best Job: Sub-editor or technician",
         "celebrities": "text here",
         "secret": "text here"
     },
-StarSign.LEO: {
-        "career": "text here",
+StarSign.LIBRA: {
+        "career": "Best Job: Lawyer, counsellor or make-up artist",
         "celebrities": "text here",
         "secret": "text here"
     },
 StarSign.SCORPIO: {
-        "career": "text here",
+        "career": "Best Job: Surgeon, investigator or sex therapist",
         "celebrities": "text here",
         "secret": "text here"
     },
 StarSign.SAGITTARIUS: {
-        "career": "text here",
+        "career": "Best Job: Publisher or travel blogger",
         "celebrities": "text here",
         "secret": "text here"
     },
 StarSign.CAPRICORN: {
-        "career": "text here",
+        "career": "Best Job: The Boss",
         "celebrities": "text here",
         "secret": "text here"
     },
 StarSign.AQUARIUS: {
-        "career": "text here",
+        "career": "Best Job: Photographer, scientist or independent contractor",
         "celebrities": "text here",
         "secret": "text here"
     },
 StarSign.PISCES: {
-        "career": "text here",
+        "career": "Best Job: Nurse, artist or astrologer",
         "celebrities": "text here",
         "secret": "text here"
     },       
