@@ -37,6 +37,56 @@ StarSign.TAURUS: {
         "celebrities": "text here",
         "secret": "text here"
     },
+StarSign.GEMINI: {
+        "career": "text here",
+        "celebrities": "text here",
+        "secret": "text here"
+    },
+StarSign.CANCER: {
+        "career": "text here",
+        "celebrities": "text here",
+        "secret": "text here"
+    },
+StarSign.LEO: {
+        "career": "text here",
+        "celebrities": "text here",
+        "secret": "text here"
+    },
+StarSign.VIRGO: {
+        "career": "text here",
+        "celebrities": "text here",
+        "secret": "text here"
+    },
+StarSign.LEO: {
+        "career": "text here",
+        "celebrities": "text here",
+        "secret": "text here"
+    },
+StarSign.SCORPIO: {
+        "career": "text here",
+        "celebrities": "text here",
+        "secret": "text here"
+    },
+StarSign.SAGITTARIUS: {
+        "career": "text here",
+        "celebrities": "text here",
+        "secret": "text here"
+    },
+StarSign.CAPRICORN: {
+        "career": "text here",
+        "celebrities": "text here",
+        "secret": "text here"
+    },
+StarSign.AQUARIUS: {
+        "career": "text here",
+        "celebrities": "text here",
+        "secret": "text here"
+    },
+StarSign.PISCES: {
+        "career": "text here",
+        "celebrities": "text here",
+        "secret": "text here"
+    },       
 }
 
 date_input = input ("Please enter month and date of birth (MM/DD): ")
@@ -114,13 +164,13 @@ elif (month == '02' and 19 <= int(day)) or (month == '03' and int(day) <=20):
 if star_sign:
     print("Star Sign: ", star_sign.value)
 
-    key = input ("Press the key '1' for Best career match, key '2' for How to succeed or key '3' to see celebrities sharing your star sign: ")
+    key = input ("Press the key '1' for Best career match, key '2' for your signs secret weapon or press '3' to see celebrities sharing your star sign: ")
 
     if key == '1':
-        print(key_pressed1)
+        print(star_sign.career_option)
     elif key == '2':
-        print(key_pressed2)
+        print(star_sign.secret_option)
     elif key == '3':
-        print(key_pressed3)
+        print(star_sign.celebrity_option)
     else:
-        print("Please press '1' or '2'. ")
+        print("Please press '1', '2' or '3'. ")
