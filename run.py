@@ -174,7 +174,7 @@ if menu == '1':
     if star_sign:
         print("Star Sign: ", star_sign.value)
 
-        key = input ("Press the key '1' for Best career match, key '2' for your sign's secret weapon, or press '3' to see celebrities sharing your star sign: ")
+        key = input ("Press the key '1' for Best career match, key '2' for your sign's secret weapon, press '3' to see celebrities sharing your star sign or press '4' to exit: ")
 
         if key == '1':
             print(star_sign.career_option)
@@ -182,8 +182,11 @@ if menu == '1':
             print(star_sign.secret_option)
         elif key == '3':
             print(star_sign.celebrity_option)
+        elif menu == '4':
+            menu = input(INSTRUCTION_MSG)
+            continue
         else:
-            print("Please press '1', '2', or '3'. ")
+            print("Please press '1', '2', '3' or '4'. ")
 
 elif menu == '2':
     print("Find What Star Sign Is Most Likely To...")
@@ -191,20 +194,31 @@ elif menu == '2':
     print(" 1. Star Signs Most Likely To Be Serial Killers.")
     print(" 2. Star Signs Most Likely To Be Billionaires.")
     print(" 3. Star Signs Most Likely To Be Famous.")
+    print(" 4. Return To Menu")
 
-    key = input()
+    while True:
+        key = input()
 
-    if key == '1':
-        print("Star Signs Most Likely To Be Serial Killers:")
-        for sign in stars_most_likely_to['1']:
-            print(sign.value)
-    elif key == '2':
-        print("Star Signs Most Likely To Be Billionaires:")
-        for sign in stars_most_likely_to['2']:
-            print(sign.value)
-    elif key == '3':
-        print("Star Signs Most Likely To Be Famous:")
-        for sign in stars_most_likely_to['3']:
-            print(sign.value)
-    else:
-        print("Please press '1', '2', or '3'.")
+        if key == '1':
+            print("Star Signs Most Likely To Be Serial Killers:")
+            for sign in stars_most_likely_to['1']:
+                print(sign.value)
+        elif key == '2':
+            print("Star Signs Most Likely To Be Billionaires:")
+            for sign in stars_most_likely_to['2']:
+                print(sign.value)
+        elif key == '3':
+            print("Star Signs Most Likely To Be Famous:")
+            for sign in stars_most_likely_to['3']:
+                print(sign.value)
+        elif menu == '4':
+            menu = input(INSTRUCTION_MSG)
+        else:
+            print("Please press '1', '2', '3' or '4'.")
+
+elif menu == '3':
+    # Show user stats for the app
+    pass
+
+elif menu == '4':
+    menu = input(INSTRUCTION_MSG)
