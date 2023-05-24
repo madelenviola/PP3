@@ -1,9 +1,9 @@
 INSTRUCTION_MSG = """
 Welcome! Find your Star Sign and learn more about you according to astrology.
 Select Options by pressing 1, 2 or 3: 
-   A. Get Your Star Sign Based On Birth Date.
-   B. View Star Signs Most Likely To... 
-   C. Show User Stats For This App.
+   1. Get Your Star Sign Based On Birth Date.
+   2. View Star Signs Most Likely To... 
+   3. Show User Stats For This App.
 """
 from collections import Counter
 import enum
@@ -114,64 +114,97 @@ StarSign.PISCES: {
     },       
 }
 
+stars_most_likely_to={
+    '1': [
+        StarSign.VIRGO,
+        StarSign.GEMINI,
+        StarSign.PISCES,
+        StarSign.SAGITTARIUS
+    ],
+    '2': [
+        StarSign.LIBRA,
+        StarSign.PISCES,
+        StarSign.CANCER,
+        StarSign.TAURUS
+    ],
+    '3': [
+        StarSign.LEO,
+        StarSign.LIBRA,
+        StarSign.SAGITTARIUS,
+        StarSign.AQUARIUS
+    ]
+}
+
 menu = input(INSTRUCTION_MSG)
 
-if menu =='A':
+if menu == '1':
     date_input = input("Please enter month and date of birth (MM/DD): ")
-while not _validate_birth_date(date_input):
-    if not date_input.replace('/', '').isdigit():
-        print("Input not valid. Please enter a valid birth date in the format MM/DD")
-    date_input = input("Enter month and date of birth in format (MM/DD): ")
+    while not _validate_birth_date(date_input):
+        if not date_input.replace('/', '').isdigit():
+            print("Input not valid. Please enter a valid birth date in the format MM/DD")
+        date_input = input("Enter month and date of birth in format (MM/DD): ")
 
-month, day = date_input.split('/')
+    month, day = date_input.split('/')
+    
+    if (month == '03' and 21 <= int(day)) or (month == '04' and int(day) <=19):
+        star_sign = StarSign.ARIES
+    elif (month == '04' and 20 <= int(day)) or (month == '05' and int(day) <=20):
+        star_sign = StarSign.TAURUS
+    elif (month == '05' and 21 <= int(day)) or (month == '06' and int(day) <=21):
+        star_sign = StarSign.GEMINI
+    elif (month == '06' and 22 <= int(day)) or (month == '07' and int(day) <=22):
+        star_sign = StarSign.CANCER
+    elif (month == '07' and 23 <= int(day)) or (month == '08' and int(day) <=22):
+        star_sign = StarSign.LEO
+    elif (month == '08' and 23 <= int(day)) or (month == '09' and int(day) <=22):
+        star_sign = StarSign.VIRGO
+    elif (month == '09' and 23 <= int(day)) or (month == '10' and int(day) <=23):
+        star_sign = StarSign.LIBRA
+    elif (month == '10' and 24 <= int(day)) or (month == '11' and int(day) <=21):
+        star_sign = StarSign.SCORPIO
+    elif (month == '11' and 22 <= int(day)) or (month == '12' and int(day) <=21):
+        star_sign = StarSign.SAGITTARIUS
+    elif (month == '12' and 22 <= int(day)) or (month == '01' and int(day) <=19):
+        star_sign = StarSign.CAPRICORN
+    elif (month == '01' and 20 <= int(day)) or (month == '02' and int(day) <=18):
+        star_sign = StarSign.AQUARIUS
+    elif (month == '02' and 19 <= int(day)) or (month == '03' and int(day) <=20):
+        star_sign = StarSign.PISCES
 
-if (month == '03' and 21 <= int(day)) or (month == '04' and int(day) <=19):
-    star_sign = StarSign.ARIES
-elif (month == '04' and 20 <= int(day)) or (month == '05' and int(day) <=20):
-    star_sign = StarSign.TAURUS
-elif (month == '05' and 21 <= int(day)) or (month == '06' and int(day) <=21):
-    star_sign = StarSign.GEMINI
-elif (month == '06' and 22 <= int(day)) or (month == '07' and int(day) <=22):
-    star_sign = StarSign.CANCER
-elif (month == '07' and 23 <= int(day)) or (month == '08' and int(day) <=22):
-    star_sign = StarSign.LEO
-elif (month == '08' and 23 <= int(day)) or (month == '09' and int(day) <=22):
-    star_sign = StarSign.VIRGO
-elif (month == '09' and 23 <= int(day)) or (month == '10' and int(day) <=23):
-    star_sign = StarSign.LIBRA
-elif (month == '10' and 24 <= int(day)) or (month == '11' and int(day) <=21):
-    star_sign = StarSign.SCORPIO
-elif (month == '11' and 22 <= int(day)) or (month == '12' and int(day) <=21):
-    star_sign = StarSign.SAGITTARIUS
-elif (month == '12' and 22 <= int(day)) or (month == '01' and int(day) <=19):
-    star_sign = StarSign.CAPRICORN
-elif (month == '01' and 20 <= int(day)) or (month == '02' and int(day) <=18):
-    star_sign = StarSign.AQUARIUS
-elif (month == '02' and 19 <= int(day)) or (month == '03' and int(day) <=20):
-    star_sign = StarSign.PISCES
-    print("Star Sign: ", star_sign.value)
+    if star_sign:
+        print("Star Sign: ", star_sign.value)
 
+        key = input ("Press the key '1' for Best career match, key '2' for your sign's secret weapon, or press '3' to see celebrities sharing your star sign: ")
 
-if star_sign:
-    print("Star Sign: ", star_sign.value)
+        if key == '1':
+            print(star_sign.career_option)
+        elif key == '2':
+            print(star_sign.secret_option)
+        elif key == '3':
+            print(star_sign.celebrity_option)
+        else:
+            print("Please press '1', '2', or '3'. ")
 
-    key = input ("Press the key '1' for Best career match, key '2' for your signs secret weapon or press '3' to see celebrities sharing your star sign: ")
+elif menu == '2':
+    print("Find What Star Sign Is Most Likely To...")
+    print("Select by pressing key '1', '2' or '3':")
+    print(" 1. Star Signs Most Likely To Be Serial Killers.")
+    print(" 2. Star Signs Most Likely To Be Billionaires.")
+    print(" 3. Star Signs Most Likely To Be Famous.")
+
+    key = input()
 
     if key == '1':
-        print(star_sign.career_option)
+        print("Star Signs Most Likely To Be Serial Killers:")
+        for sign in stars_most_likely_to['1']:
+            print(sign.value)
     elif key == '2':
-        print(star_sign.secret_option)
+        print("Star Signs Most Likely To Be Billionaires:")
+        for sign in stars_most_likely_to['2']:
+            print(sign.value)
     elif key == '3':
-        print(star_sign.celebrity_option)
+        print("Star Signs Most Likely To Be Famous:")
+        for sign in stars_most_likely_to['3']:
+            print(sign.value)
     else:
-        print("Please press '1', '2' or '3'. ")
-
-def print_leaderboard(star_sign_counter, key_counter, total_inputs):
-    print("\n=== Statistics ===")
-    print("Total Inputs:", total_inputs)
-    print("\nStar Sign Counter:")
-    for sign, count in star_sign_counter.items():
-        print(f"{sign.value}:{count}")
-    print("\nkey Count:")
-    for key, count in key_counter.items():
-        print(f"Key {key}:{count}")
+        print("Please press '1', '2', or '3'.")
