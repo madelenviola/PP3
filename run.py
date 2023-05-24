@@ -1,3 +1,4 @@
+from collections import Counter
 import enum
 
 class StarSign(enum.Enum):
@@ -89,6 +90,8 @@ StarSign.PISCES: {
     },       
 }
 
+def _get_user_birth_date():
+    return input("Please enter month and date of birth (MM/DD): ")
 
 def _validate_birth_date(date_input):
     date_parts = date_input.split("/")
@@ -153,3 +156,13 @@ if star_sign:
         print(star_sign.celebrity_option)
     else:
         print("Please press '1', '2' or '3'. ")
+
+def print_leaderboard(star_sign_counter, key_counter, total_inputs):
+    print("\n=== Statistics ===")
+    print("Total Inputs:", total_inputs)
+    print("\nStar Sign Counter:")
+    for sign, count in star_sign_counter.items():
+        print(f"{sign.value}:{count}")
+    print("\nkey Count:")
+    for key, count in key_counter.items():
+        print(f"Key {key}:{count}")
