@@ -1,3 +1,10 @@
+INSTRUCTION_MSG = """
+Welcome! Find your Star Sign and learn more about you according to astrology.
+Select Options by pressing 1, 2 or 3: 
+   A. Get Your Star Sign Based On Birth Date.
+   B. View Star Signs Most Likely To... 
+   C. Show User Stats For This App.
+"""
 from collections import Counter
 import enum
 
@@ -27,6 +34,23 @@ class StarSign(enum.Enum):
     def secret_option(self):
         return STAR_SIGN_CAREER_MATCH[self]["secret"]
 
+
+def _get_user_birth_date():
+    return input("Please enter month and date of birth (MM/DD): ")
+
+def _validate_birth_date(date_input):
+    date_parts = date_input.split("/")
+    if len(date_parts) == 2:
+        month, day = date_parts
+
+        if month.isdigit() and day.isdigit():
+            month = int(month)
+            day = int(day)
+
+            if 1 <= month <= 12 and 1 <= day <= 31:
+                return True
+
+    return False
 STAR_SIGN_CAREER_MATCH = {
     StarSign.ARIES: {
         "career": "Best Job: Entrepreneur or journalist",
@@ -90,29 +114,14 @@ StarSign.PISCES: {
     },       
 }
 
-def _get_user_birth_date():
-    return input("Please enter month and date of birth (MM/DD): ")
+menu = input(INSTRUCTION_MSG)
 
-def _validate_birth_date(date_input):
-    date_parts = date_input.split("/")
-    if len(date_parts) == 2:
-        month, day = date_parts
-
-        if month.isdigit() and day.isdigit():
-            month = int(month)
-            day = int(day)
-
-            if 1 <= month <= 12 and 1 <= day <= 31:
-                return True
-
-    return False
-
-date_input = input("Please enter month and date of birth (MM/DD): ")
-
+if menu =='A':
+    date_input = input("Please enter month and date of birth (MM/DD): ")
 while not _validate_birth_date(date_input):
     if not date_input.replace('/', '').isdigit():
         print("Input not valid. Please enter a valid birth date in the format MM/DD")
-        date_input = input("Enter month and date of birth in format (MM/DD): ")
+    date_input = input("Enter month and date of birth in format (MM/DD): ")
 
 month, day = date_input.split('/')
 
