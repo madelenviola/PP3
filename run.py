@@ -1,8 +1,11 @@
+from collections import Counter
+import enum
+
 INSTRUCTION_MSG = """
 Welcome! Find your Star Sign and learn more about you according to astrology.
-Select Options by pressing 1, 2, or 3: 
+Select Options by pressing 1, 2, or 3:
    1. Get Your Star Sign Based On Birth Date.
-   2. View Star Signs Most Likely To... 
+   2. View Star Signs Most Likely To...
    3. Show User Stats For This App.
    4. Exit the Program.
 """
@@ -13,9 +16,6 @@ Press the key '2' For Your Star Sign's Secret Weapon.
 Press the key '3' To See Celebrities Sharing Your Star Sign.
 Press the key '4' To Exit.
 """
-
-from collections import Counter
-import enum
 
 class StarSign(enum.Enum):
     ARIES = "Aries"
@@ -60,6 +60,7 @@ def _validate_birth_date(date_input):
                 return True
 
     return False
+
 
 STAR_SIGN_CAREER_MATCH = {
     StarSign.ARIES: {
@@ -158,34 +159,34 @@ while not exit_program:
             date_input = input("Enter month and date of birth in format (MM/DD): ")
 
         month, day = date_input.split('/')
-        
-        if (month == '03' and 21 <= int(day)) or (month == '04' and int(day) <=19):
+
+        if (month == '03' and 21 <= int(day)) or (month == '04' and int(day) <= 19):
             star_sign = StarSign.ARIES
-        elif (month == '04' and 20 <= int(day)) or (month == '05' and int(day) <=20):
+        elif (month == '04' and 20 <= int(day)) or (month == '05' and int(day) <= 20):
             star_sign = StarSign.TAURUS
-        elif (month == '05' and 21 <= int(day)) or (month == '06' and int(day) <=21):
+        elif (month == '05' and 21 <= int(day)) or (month == '06' and int(day) <= 21):
             star_sign = StarSign.GEMINI
-        elif (month == '06' and 22 <= int(day)) or (month == '07' and int(day) <=22):
+        elif (month == '06' and 22 <= int(day)) or (month == '07' and int(day) <= 22):
             star_sign = StarSign.CANCER
-        elif (month == '07' and 23 <= int(day)) or (month == '08' and int(day) <=22):
+        elif (month == '07' and 23 <= int(day)) or (month == '08' and int(day) <= 22):
             star_sign = StarSign.LEO
-        elif (month == '08' and 23 <= int(day)) or (month == '09' and int(day) <=22):
+        elif (month == '08' and 23 <= int(day)) or (month == '09' and int(day) <= 22):
             star_sign = StarSign.VIRGO
-        elif (month == '09' and 23 <= int(day)) or (month == '10' and int(day) <=23):
+        elif (month == '09' and 23 <= int(day)) or (month == '10' and int(day) <= 23):
             star_sign = StarSign.LIBRA
-        elif (month == '10' and 24 <= int(day)) or (month == '11' and int(day) <=21):
+        elif (month == '10' and 24 <= int(day)) or (month == '11' and int(day) <= 21):
             star_sign = StarSign.SCORPIO
-        elif (month == '11' and 22 <= int(day)) or (month == '12' and int(day) <=21):
+        elif (month == '11' and 22 <= int(day)) or (month == '12' and int(day) <= 21):
             star_sign = StarSign.SAGITTARIUS
-        elif (month == '12' and 22 <= int(day)) or (month == '01' and int(day) <=19):
+        elif (month == '12' and 22 <= int(day)) or (month == '01' and int(day) <= 19):
             star_sign = StarSign.CAPRICORN
-        elif (month == '01' and 20 <= int(day)) or (month == '02' and int(day) <=18):
+        elif (month == '01' and 20 <= int(day)) or (month == '02' and int(day) <= 18):
             star_sign = StarSign.AQUARIUS
-        elif (month == '02' and 19 <= int(day)) or (month == '03' and int(day) <=20):
+        elif (month == '02' and 19 <= int(day)) or (month == '03' and int(day) <= 20):
             star_sign = StarSign.PISCES
 
         if star_sign:
-            print("Star Sign: ", star_sign.value)
+            print("Star Sign:", star_sign.value)
 
             while True:
                 key = input(key_instructions)
@@ -200,34 +201,35 @@ while not exit_program:
                     break
                 else:
                     print("Please press '1', '2', '3', or '4'.")
-                break
+            break
 
     elif menu == '2':
-        print("Find What Star Sign Is Most Likely To...")
-        print("Select by pressing key '1', '2' or '3':")
-        print(" 1. Star Signs Most Likely To Be Serial Killers.")
-        print(" 2. Star Signs Most Likely To Be Billionaires.")
-        print(" 3. Star Signs Most Likely To Be Famous.")
-        print(" 4. Return To Menu")
+        while True:
+            print("Find What Star Sign Is Most Likely To...")
+            print("Select by pressing key '1', '2', '3' or '4':")
+            print(" 1. Star Signs Most Likely To Be Serial Killers.")
+            print(" 2. Star Signs Most Likely To Be Billionaires.")
+            print(" 3. Star Signs Most Likely To Be Famous.")
+            print(" 4. Return To Menu")
 
-        key = input()
+            key2 = input()
 
-        if key == '1':
-            print("Star Signs Most Likely To Be Serial Killers:")
-            for sign in stars_most_likely_to['1']:
-                print(sign.value)
-        elif key == '2':
-            print("Star Signs Most Likely To Be Billionaires:")
-            for sign in stars_most_likely_to['2']:
-                print(sign.value)
-        elif key == '3':
-            print("Star Signs Most Likely To Be Famous:")
-            for sign in stars_most_likely_to['3']:
-                print(sign.value)
-        elif key == '4':
-            print("Returning to the menu...")
-        else:
-            print("Invalid input. Returning to the menu...")
+            if key2 == '1':
+                print("Star Signs Most Likely To Be Serial Killers:")
+                for sign in stars_most_likely_to['1']:
+                    print(sign.value)
+            elif key2 == '2':
+                print("Star Signs Most Likely To Be Billionaires:")
+                for sign in stars_most_likely_to['2']:
+                    print(sign.value)
+            elif key2 == '3':
+                print("Star Signs Most Likely To Be Famous:")
+                for sign in stars_most_likely_to['3']:
+                    print(sign.value)
+            elif key2 == '4':
+                break
+            else:
+                print("Invalid input. Please select options by pressing 1, 2, 3, or 4.")
 
     elif menu == '3':
         print("Showing user stats for this app...")
@@ -235,6 +237,7 @@ while not exit_program:
     elif menu == '4':
         print("Exiting program")
         exit_program = True
+        break
 
     else:
         print("Invalid input. Please select options by pressing 1, 2, 3, or 4.")
