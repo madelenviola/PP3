@@ -1,11 +1,8 @@
-from collections import Counter
-import enum
-
 INSTRUCTION_MSG = """
 Welcome! Find your Star Sign and learn more about you according to astrology.
-Select Options by pressing 1, 2, or 3:
+Select Options by pressing 1, 2, or 3: 
    1. Get Your Star Sign Based On Birth Date.
-   2. View Star Signs Most Likely To...
+   2. View Star Signs Most Likely To... 
    3. Show User Stats For This App.
    4. Exit the Program.
 """
@@ -17,6 +14,8 @@ Press the key '3' To See Celebrities Sharing Your Star Sign.
 Press the key '4' To Exit.
 """
 
+from collections import Counter
+import enum
 
 class StarSign(enum.Enum):
     ARIES = "Aries"
@@ -47,7 +46,6 @@ class StarSign(enum.Enum):
 
 def _get_user_birth_date():
     return input("Please enter month and date of birth (MM/DD): ")
-
 
 def _validate_birth_date(date_input):
     date_parts = date_input.split("/")
@@ -148,9 +146,6 @@ stars_most_likely_to = {
 }
 
 exit_program = False
-total_inputs = 0
-star_sign_counter = Counter()
-key_counter = Counter()
 
 while not exit_program:
     menu = input(INSTRUCTION_MSG)
@@ -196,21 +191,16 @@ while not exit_program:
                 key = input(key_instructions)
                 if key == '1':
                     print(star_sign.career_option)
-                    key_counter['1'] +=1
                 elif key == '2':
                     print(star_sign.secret_option)
-                    key_counter['2'] +=1
                 elif key == '3':
                     print(star_sign.celebrity_option)
-                    key_counter['3'] +=1
                 elif key == '4':
                     exit_program = True
                     break
                 else:
                     print("Please press '1', '2', '3', or '4'.")
                 break
-            star_sign_counter[star_sign] +=1
-            total_inputs +=1
 
     elif menu == '2':
         print("Find What Star Sign Is Most Likely To...")
@@ -240,21 +230,7 @@ while not exit_program:
             print("Invalid input. Returning to the menu...")
 
     elif menu == '3':
-        print("\n=== Statistics ===")
-        print("Total Inputs:", total_inputs)
-        print("\nStar Sign Counter:")
-        for sign, count in star_sign_counter.items():
-            print(f"{sign.value}:{count}")
-        print("\nKey Count:")
-        options = {
-            '1': "Get Your Star Sign Based On Birth Date",
-            '2': "Your Star Signs Secret Weapon",
-            '3': "See Celebrities Sharing Your Star Sign",
-            '4': "Exit The Program"
-        }
-        for key, count in key_counter.items():
-            option_text = options.get(key, "Invalid Option")
-            print(f"{option_text}: {count}")
+        print("Showing user stats for this app...")
 
     elif menu == '4':
         print("Exiting program")
