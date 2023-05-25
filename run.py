@@ -1,8 +1,11 @@
+from collections import Counter
+import enum
+
 INSTRUCTION_MSG = """
 Welcome! Find your Star Sign and learn more about you according to astrology.
-Select Options by pressing 1, 2, or 3: 
+Select Options by pressing 1, 2, or 3:
    1. Get Your Star Sign Based On Birth Date.
-   2. View Star Signs Most Likely To... 
+   2. View Star Signs Most Likely To...
    3. Show User Stats For This App.
    4. Exit the Program.
 """
@@ -14,8 +17,6 @@ Press the key '3' To See Celebrities Sharing Your Star Sign.
 Press the key '4' To Exit.
 """
 
-from collections import Counter
-import enum
 
 class StarSign(enum.Enum):
     ARIES = "Aries"
@@ -46,6 +47,7 @@ class StarSign(enum.Enum):
 
 def _get_user_birth_date():
     return input("Please enter month and date of birth (MM/DD): ")
+
 
 def _validate_birth_date(date_input):
     date_parts = date_input.split("/")
