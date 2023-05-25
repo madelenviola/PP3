@@ -1,9 +1,17 @@
 INSTRUCTION_MSG = """
 Welcome! Find your Star Sign and learn more about you according to astrology.
-Select Options by pressing 1, 2 or 3: 
+Select Options by pressing 1, 2, or 3: 
    1. Get Your Star Sign Based On Birth Date.
    2. View Star Signs Most Likely To... 
    3. Show User Stats For This App.
+   4. Exit the Program.
+"""
+
+key_instructions = """
+Press the key '1' To See Best Career Match.
+Press the key '2' For Your Star Sign's Secret Weapon.
+Press the key '3' To See Celebrities Sharing Your Star Sign.
+Press the key '4' To Exit.
 """
 
 from collections import Counter
@@ -137,6 +145,9 @@ stars_most_likely_to = {
     ]
 }
 
+exit_program = False
+
+while not exit_program:
     menu = input(INSTRUCTION_MSG)
 
     if menu == '1':
@@ -176,8 +187,8 @@ stars_most_likely_to = {
         if star_sign:
             print("Star Sign: ", star_sign.value)
 
-                key = input("Press the key '1' for Best career match, key '2' for your sign's secret weapon, press '3' to see celebrities sharing your star sign or press '4' to exit: ")
-
+            while True:
+                key = input(key_instructions)
                 if key == '1':
                     print(star_sign.career_option)
                 elif key == '2':
@@ -199,31 +210,31 @@ stars_most_likely_to = {
         print(" 3. Star Signs Most Likely To Be Famous.")
         print(" 4. Return To Menu")
 
-            key = input()
+        key = input()
 
-            if key == '1':
-                print("Star Signs Most Likely To Be Serial Killers:")
-                for sign in stars_most_likely_to['1']:
-                    print(sign.value)
-            elif key == '2':
-                print("Star Signs Most Likely To Be Billionaires:")
-                for sign in stars_most_likely_to['2']:
-                    print(sign.value)
-            elif key == '3':
-                print("Star Signs Most Likely To Be Famous:")
-                for sign in stars_most_likely_to['3']:
-                    print(sign.value)
-            elif key == '4':
-                print("Returning to the menu...")
-                exit()
-            else:
-                exit()
-                break
+        if key == '1':
+            print("Star Signs Most Likely To Be Serial Killers:")
+            for sign in stars_most_likely_to['1']:
+                print(sign.value)
+        elif key == '2':
+            print("Star Signs Most Likely To Be Billionaires:")
+            for sign in stars_most_likely_to['2']:
+                print(sign.value)
+        elif key == '3':
+            print("Star Signs Most Likely To Be Famous:")
+            for sign in stars_most_likely_to['3']:
+                print(sign.value)
+        elif key == '4':
+            print("Returning to the menu...")
+        else:
+            print("Invalid input. Returning to the menu...")
 
     elif menu == '3':
         print("Showing user stats for this app...")
 
     elif menu == '4':
-        sys.exit("Exiting the code with sys.exit()!")
+        print("Exiting program")
+        exit_program = True
+
     else:
         print("Invalid input. Please select options by pressing 1, 2, 3, or 4.")
