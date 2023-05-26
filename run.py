@@ -259,20 +259,17 @@ def _show_star_sign_submenu_options(star_sign):
 
         input("Press any key to continue...")
 
+
 def star_sign_compute_options():
+    """
+    Computes star sign and returns sub menu options
+    """
     valid_input = False
     while not valid_input:
         date_input = _get_user_birth_date()
         valid_input = _validate_birth_date(date_input)
         if not valid_input:
             print("Input not valid.")
-        # if not date_input.replace("/", "").isdigit():
-        #     print(
-        #         "Input not valid. Please enter a valid birth date in the format MM/DD"
-        #     )
-        # date_input = input(
-        #     "Enter month and date of birth in format (MM/DD): "
-        # )
 
     star_sign = _compute_star_sign(date_input)
     if not star_sign:
@@ -326,7 +323,7 @@ def main():
                     )
 
         elif menu == "3":
-            print("Showing user stats for this app...")
+            print("User stats feature coming soon...")
 
         elif menu == "4":
             print("Exiting program")
