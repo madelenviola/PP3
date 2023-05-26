@@ -28,6 +28,8 @@ Press the key '2' For Your Star Sign's Secret Weapon.
 Press the key '3' To See Celebrities Sharing Your Star Sign.
 Press the key '4' To go to main menu.
 
+![Star sign celebrities](./images/famoustaurus.png)
+
 When the user inputs one of the four keys correctly the star sign information related to their choice will generate on the screen along with message ”Press any key to continue…”  When any key is pressed the user gets the menu with the options to:
 
 Press the key '1' To See Best Career Match.
@@ -46,7 +48,9 @@ Select Options by pressing 1, 2, or 3:
 
 ### 2. View Star Signs Most Likely To...
 
-When the user inputs 2 to se Star Signs Most Likely To… A menu with four choices generates.  Find What Star Sign Is Most Likely To...
+![Star signs most likely to](./images/mostlikelyto.png)
+
+When the user inputs 2 to se Star Signs Most Likely To… A menu with four choices generates. Find What Star Sign Is Most Likely To...
 Select by pressing key '1', '2', '3' or '4':
  1. Star Signs Most Likely To Be Serial Killers.
  2. Star Signs Most Likely To Be Billionaires.
@@ -141,14 +145,16 @@ This project was deployed using following steps:
 ## Credits
 
 Copy for this program:
-Best Career Match for your star sign: https://www.theurbanlist.com/a-list/we-reveal-what-job-you-should-be-doing-based-on-your-star-sign
-Your Star Sign's Secret Weapon: https://www.horoscope.com/zodiac-signs/gemini
-Celebrities that share your sign: https://www.horoscope.com/zodiac-signs/taurus
+- [Best Career Match for your star sign](https://www.theurbanlist.com/a-list/we-reveal-what-job-you-should-be-doing-based-on-your-star-sign)
+
+- [Your star signs secret weapon & Celebrities](https://www.horoscope.com/zodiac-signs/gemini)
 
 Star Signs Most Likely to:
-NYPOST - https://nypost.com/2022/10/04/four-astrology-signs-linked-with-the-most-known-serial-killers/
-BUSINESS INSIDER -  https://www.businessinsider.com/zodiac-signs-with-the-most-billionaires-2019-4?r=US&IR=T#1-libraseptember-23-october-22-1
-SOSYNCD -  https://www.sosyncd.com/zodiac-signs-ranked-by-most-likely-to-be-famous/
+- [Most likely to be Serial Killers](https://nypost.com/2022/10/04/four-astrology-signs-linked-with-the-most-known-serial-killers/)
+
+- [Most likely to be billionaires](https://www.businessinsider.com/zodiac-signs-with-the-most-billionaires-2019-4?r=US&IR=T#1-libraseptember-23-october-22-1)
+
+- [Most likely to be Famous](https://www.sosyncd.com/zodiac-signs-ranked-by-most-likely-to-be-famous/)
 
 The Code Institute learning material
 - Nested if-else statements
