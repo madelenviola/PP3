@@ -20,6 +20,7 @@ By pressing key 1 the user is asked to input birth month and date in format MM/D
 
 A validator checks if the user input is in the correct form and if the dates are valid in order to compute a star sign. If the user inputs invalid information such as letters or a date in the wrong format a error message is displayed that says: Input not valid. The program then urges the user: Please enter month and date of birth (MM/DD): 
 
+![Star sign generated](./images/taurus.png)
 When the user inputs MM/DD the program will generate the users star sign and present it on the screen with 4 new options of:
 
 Press the key '1' To See Best Career Match.
