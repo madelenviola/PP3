@@ -163,6 +163,7 @@ The Code Institute learning material
 
 My Code Institute mentor Sandeep
 
+[Stackoverflow](https://stackoverflow.com/)
 stackoverflow.com for better understanging of how and why.
 
-Programming with Mosh on Youtube
+[Programming with Mosh](https://www.youtube.com/watch?v=Zp5MuPOtsSY)
