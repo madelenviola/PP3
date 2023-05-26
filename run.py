@@ -11,10 +11,11 @@ Select Options by pressing 1, 2, or 3:
 """
 
 key_instructions = """
-Press the key '1' To See Best Career Match.
-Press the key '2' For Your Star Sign's Secret Weapon.
-Press the key '3' To See Celebrities Sharing Your Star Sign.
-Press the key '4' To go to main menu.
+Select Options by pressing 1, 2, or 3:
+'1' To See Best Career Match.
+'2' For Your Star Sign's Secret Weapon.
+'3' To See Celebrities Sharing Your Star Sign.
+'4' To go to main menu.
 """
 
 
